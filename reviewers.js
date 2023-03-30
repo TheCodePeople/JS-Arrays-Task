@@ -1,5 +1,4 @@
 const reviewers = require("./reviewers.json");
-console.log("🚀 ~ file: reviewers.js:2 ~ reviewers:", reviewers);
 
 /**************************************************************
  * getReviewerName(reviewer)
@@ -7,7 +6,7 @@ console.log("🚀 ~ file: reviewers.js:2 ~ reviewers:", reviewers);
  * - returns the name of the reviewer
  ****************************************************************/
 function getReviewerName(reviewer) {
-  //TODO: ADD YOUR CODE HERE
+  return reviewer.reviewerName;
 }
 // console.log(getReviewerName(reviewers[0]));
 
@@ -17,7 +16,7 @@ function getReviewerName(reviewer) {
  * - returns the number of books reviews that reviewer has done
  ****************************************************************/
 function numberOfReviews(reviewer) {
-  //TODO: ADD YOUR CODE HERE
+  return reviewer.books.length;
 }
 // console.log(numberOfReviews(reviewers[0]));
 
@@ -31,7 +30,7 @@ function numberOfReviews(reviewer) {
  * BONUS: use iteration method `.some()`
  ****************************************************************/
 function reviewerHasReview(reviewTitle, reviewer) {
-  //TODO: ADD YOUR CODE HERE
+  return reviewer.books.some((review) => review.title === reviewTitle);
 }
 // console.log(reviewerHasReview("Becoming", reviewers[0]));
 
@@ -44,7 +43,7 @@ function reviewerHasReview(reviewTitle, reviewer) {
  * BONUS: use iteration method `.find()`
  ****************************************************************/
 function getReviewerByName(reviewerName, reviewers) {
-  //TODO: ADD YOUR CODE HERE
+  return reviewers.find((reviewer) => reviewer.reviewerName === reviewerName);
 }
 // console.log(getReviewerByName("Michelle Obama", reviewers));
 
@@ -57,7 +56,7 @@ function getReviewerByName(reviewerName, reviewers) {
  * BONUS: use iteration methods `.find()` and `.some()`
  ****************************************************************/
 function getReviewerByReviewTitle(reviewTitle, reviewers) {
-  //TODO: ADD YOUR CODE HERE
+  return reviewers.find((reviewer) => reviewerHasReview(reviewTitle, reviewer));
 }
 // console.log(getReviewerByReviewTitle("The Overstory", reviewers));
 
@@ -70,6 +69,10 @@ function getReviewerByReviewTitle(reviewTitle, reviewers) {
  * Hint: use string method `.includes()` and iteration method `.filter()`
  ****************************************************************/
 function searchReviewers(query, reviewers) {
-  //TODO: ADD YOUR CODE HERE
+  return reviewers.filter(
+    (reviewer) =>
+      reviewer.reviewerName.includes(query) ||
+      reviewer.description.includes(query)
+  );
 }
 // console.log(searchReviewers("o", reviewers));
