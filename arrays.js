@@ -2,7 +2,6 @@
  Task 1 (sumArray): 
    Create a function sumArray that receives an array of numbers as a parameter and returns the sum of all the numbers in the array.
 **************************************************************/
-// TODO: ADD YOUR CODE BELOW
 function sumArray(numbers) {
   return numbers.reduce(
     (accumulator, currentNumber) => accumulator + currentNumber,
@@ -16,7 +15,6 @@ console.log(sumArray([4, 3, 2, 5, -10]));
   Create a function findFirstStringStartingWithA that receives an array of strings as a parameter
   and returns the first string that starts with the letter given letter.
 **************************************************************/
-// TODO: ADD YOUR CODE BELOW
 function findFirstStringStartingWithLetter(letter, strings) {
   return strings.find((str) => str.toLowerCase().startsWith(letter));
 }
@@ -29,7 +27,6 @@ console.log(
   Create a function isPresentIncluded that receives an array of presents as a parameter and uses the includes method to check 
   if a present is included in the array.
 **************************************************************/
-// TODO: ADD YOUR CODE BELOW
 function isPresentIncluded(presentName, presents) {
   return presents.map((present) => present.toLowerCase()).includes(presentName);
 }
@@ -48,7 +45,6 @@ console.log(
   Create a function sortStudentsAlphabetically that receives an array of students name as a parameter 
   and uses the sort method to sort the strings in alphabetical order.
 **************************************************************/
-// TODO: ADD YOUR CODE BELOW
 function sortStudentsAlphabetically(students) {
   return students.sort();
 }
@@ -75,7 +71,6 @@ console.log(
    - console.log(odds); // Output: [1, 3, 5, 7, 9]
    - console.log(evens); // Output: [2, 4, 6, 8, 10]
 **************************************************************/
-// TODO: ADD YOUR CODE BELOW
 function separateOddEven(numbers) {
   const odds = [];
   const evens = [];
@@ -101,7 +96,6 @@ function separateOddEven(numbers) {
   const updatedItems = removeItem('#153', items);
   console.log(updatedItems); // Output: [{ code: "#147", name: "Scissors" }, { code: "#249", name: "Pillow" }, { code: "#149", name: "Tissue" },];
 **************************************************************/
-// TODO: ADD YOUR CODE BELOW
 function removeItem(code, items) {
   return items.filter((item) => item.code !== code);
 }
@@ -157,7 +151,6 @@ Task 7:
      { firstName: "Johny", lastName: "Micle", grade: 20, type: "regular" },
    ];
 **************************************************************/
-// TODO: ADD YOUR CODE BELOW
 function updateGrades(curve, students) {
   return students.map((student) =>
     student.type === "nerd"
