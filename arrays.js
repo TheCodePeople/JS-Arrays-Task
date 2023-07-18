@@ -1,6 +1,7 @@
 /**************************************************************
  Task 1: 
    Create a function sumArray that receives an array of numbers as a parameter and returns the sum of all the numbers in the array.
+   Hint: Use the .reduce() method
 **************************************************************/
 function sumArray(numbers) {
   //TODO: Add your code here
@@ -11,6 +12,8 @@ function sumArray(numbers) {
  Task 2:
   Create a function findFirstStringStartingWithA that receives an array of strings as a parameter
   and returns the first string that starts with the letter given letter.
+  
+  Hint: Use the .find() and .startsWith() methods
 **************************************************************/
 function findFirstStringStartingWithLetter(letter, strings) {
   //TODO: Add your code here
@@ -23,6 +26,8 @@ function findFirstStringStartingWithLetter(letter, strings) {
  Task 3:
   Create a function isPresentIncluded that receives an array of presents as a parameter and uses the includes method to check 
   if a present is included in the array.
+  
+  Hint: Use the .map() and .includes() methods
 **************************************************************/
 function isPresentIncluded(presentName, presents) {
   //TODO: Add your code here
@@ -41,6 +46,8 @@ function isPresentIncluded(presentName, presents) {
  Task 4:
   Create a function sortStudentsAlphabetically that receives an array of students name as a parameter 
   and uses the sort method to sort the strings in alphabetical order.
+
+  Hint: Use the .sort() method
 **************************************************************/
 function sortStudentsAlphabetically(students) {
   //TODO: Add your code here
@@ -67,6 +74,8 @@ function sortStudentsAlphabetically(students) {
    - const [odds, evens] = separateOddEven([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);
    - console.log(odds); // Output: [1, 3, 5, 7, 9]
    - console.log(evens); // Output: [2, 4, 6, 8, 10]
+
+   Hint: Use the .forEach() and .push() methods
 **************************************************************/
 function separateOddEven(numbers) {
   //TODO: Add your code here
@@ -87,6 +96,8 @@ function separateOddEven(numbers) {
    
   const updatedItems = removeItem('#153', items);
   console.log(updatedItems); // Output: [{ code: "#147", name: "Scissors" }, { code: "#249", name: "Pillow" }, { code: "#149", name: "Tissue" },];
+
+  Hint: Use the .filter and .startsWith method
 **************************************************************/
 function removeItem(code, items) {
   //TODO: Add your code here
@@ -142,6 +153,8 @@ Task 7:
      { firstName: "Um Abbas", lastName: "Winston", grade: 10, type: "nerd" },
      { firstName: "Johny", lastName: "Micle", grade: 20, type: "regular" },
    ];
+
+   Hint: Use the .map method and separator operator
 **************************************************************/
 function updateGrades(curve, students) {
   //TODO: Add your code here
