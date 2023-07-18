@@ -1,9 +1,11 @@
 /**************************************************************
- Task 1: 
+ Task 1:
    Create a function sumArray that receives an array of numbers as a parameter and returns the sum of all the numbers in the array.
 **************************************************************/
 function sumArray(numbers) {
   //TODO: Add your code here
+  return numbers.reduce((acc, curr) => acc + curr, 0);
+
 }
 // console.log(sumArray([4, 3, 2, 5, -10]));
 
@@ -14,6 +16,7 @@ function sumArray(numbers) {
 **************************************************************/
 function findFirstStringStartingWithLetter(letter, strings) {
   //TODO: Add your code here
+  return strings.find((string) => string[0].toLowerCase() === letter.toLowerCase());
 }
 // console.log(
 //   findFirstStringStartingWithLetter("h", ["Memory", "Hello", "Happy"])
@@ -21,11 +24,12 @@ function findFirstStringStartingWithLetter(letter, strings) {
 
 /**************************************************************
  Task 3:
-  Create a function isPresentIncluded that receives an array of presents as a parameter and uses the includes method to check 
+  Create a function isPresentIncluded that receives an array of presents as a parameter and uses the includes method to check
   if a present is included in the array.
 **************************************************************/
 function isPresentIncluded(presentName, presents) {
   //TODO: Add your code here
+  return presents.includes(presentName);
 }
 // console.log(
 //   isPresentIncluded("puzzle", [
@@ -39,11 +43,12 @@ function isPresentIncluded(presentName, presents) {
 
 /**************************************************************
  Task 4:
-  Create a function sortStudentsAlphabetically that receives an array of students name as a parameter 
+  Create a function sortStudentsAlphabetically that receives an array of students name as a parameter
   and uses the sort method to sort the strings in alphabetical order.
 **************************************************************/
 function sortStudentsAlphabetically(students) {
   //TODO: Add your code here
+  return students.sort();
 }
 // console.log(
 //   sortStudentsAlphabetically([
@@ -70,6 +75,17 @@ function sortStudentsAlphabetically(students) {
 **************************************************************/
 function separateOddEven(numbers) {
   //TODO: Add your code here
+  let odds = [];
+  let evens = [];
+  numbers.forEach((number) => {
+    if (number % 2 === 0) {
+      evens.push(number);
+    } else {
+      odds.push(number);
+    }
+  }
+  );
+  return [odds, evens];
 }
 // console.log(separateOddEven([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]));
 
@@ -84,12 +100,13 @@ function separateOddEven(numbers) {
    { code: '#249', name: 'Pillow' },
    { code: '#149', name: 'Tissue' }
     ];
-   
+
   const updatedItems = removeItem('#153', items);
   console.log(updatedItems); // Output: [{ code: "#147", name: "Scissors" }, { code: "#249", name: "Pillow" }, { code: "#149", name: "Tissue" },];
 **************************************************************/
 function removeItem(code, items) {
   //TODO: Add your code here
+  return items.filter((item) => item.code !== code);
 }
 // console.log(
 //   removeItem("#153", [
@@ -102,8 +119,8 @@ function removeItem(code, items) {
 
 /**************************************************************
 Task 7:
-   Write a function that takes an array of objects representing students, with properties like firstName, lastName, grade, and 
-    type (nerd or regular), and a curve which represents the amount of the curve. The function should return a new array with 
+   Write a function that takes an array of objects representing students, with properties like firstName, lastName, grade, and
+    type (nerd or regular), and a curve which represents the amount of the curve. The function should return a new array with
      updated grades, with nerds receiving a negative curve and regular students receiving a positive curve.
    - Hint: Use the map method.
    - e.g
@@ -145,6 +162,14 @@ Task 7:
 **************************************************************/
 function updateGrades(curve, students) {
   //TODO: Add your code here
+  return students.map((student) => {
+    if (student.type === "nerd") {
+      return { ...student, grade: student.grade - curve };
+    } else {
+      return { ...student, grade: student.grade + curve };
+    }
+  }
+  );
 }
 // console.log(
 //   updateGrades(10, [
