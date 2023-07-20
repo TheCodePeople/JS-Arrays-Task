@@ -9,6 +9,7 @@ function sumArray(sumarray) {
     return accumulator + currentValue;
   });
   return sum;
+  let x;
 }
 console.log(sumArray([4, 3, 2, 5, -10]));
 
@@ -19,8 +20,8 @@ console.log(sumArray([4, 3, 2, 5, -10]));
 **************************************************************/
 function findFirstStringStartingWithLetter(letter, strings) {
   //TODO: Add your code here
-  return strings.find(function (string) {
-    return string.startsWith(letter.toUpperCase());
+  return strings.find((string) => {
+    return string.toLowerCase().startsWith(letter.toLowerCase());
   });
 }
 
@@ -35,8 +36,8 @@ console.log(
 **************************************************************/
 function isPresentIncluded(presentName, presents) {
   //TODO: Add your code here
-  return presents.map(function (present) {
-    return present.includes(presentName, 0);
+  return presents.map((present) => {
+    return present.toLowerCase().includes(presentName.toLowerCase());
   });
 }
 
@@ -84,20 +85,18 @@ console.log(
 **************************************************************/
 function separateOddEven(numbers) {
   //TODO: Add your code here
+  let odd = [];
+  let even = [];
   numbers.forEach(number);
   function number(value, ind, arr) {
-    let odd = [];
-    let evens = [];
     if (value % 2 === 0) {
-      odd.pop(value);
-      evens.push(value);
+      even.push(value);
     } else {
       odd.push(value);
-      evens.pop(value);
     }
-    console.log(`odd number ${odd}`);
-    console.log(`even number ${evens}`);
   }
+  console.log(`odd number ${odd}`);
+  console.log(`even number ${even}`);
 
   return numbers;
 }
@@ -121,7 +120,7 @@ console.log(separateOddEven([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]));
 **************************************************************/
 function removeItem(code, items) {
   //TODO: Add your code here
-  return items.filter(function (item) {
+  return items.filter((item) => {
     return item.code !== code;
   });
 }
@@ -180,11 +179,12 @@ Task 7:
 **************************************************************/
 function updateGrades(curve, students) {
   //TODO: Add your code here
-  return students.map(function (student) {
+  return students.map((student) => {
     if (student.type === "regular") {
-      return (student.grade += curve);
+      student.grade += curve;
+      return student
     } else {
-      return student.grade;
+      return student
     }
   });
 }
