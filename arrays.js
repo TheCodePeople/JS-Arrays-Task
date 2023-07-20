@@ -4,12 +4,12 @@
 **************************************************************/
 function sumArray(numbers) {
   return numbers.reduce(
-    (accumulator, currentNumber) =>  //sum need ero fn 
+    (accumulator, currentNumber) =>  // كل امر بداخل الاري يحتاج ميثود والميثود تحتاج ايرو فنكشن فقط السورت لا تحتاج 
        accumulator + currentNumber )
-    0
+   
   ;
 }
-console.log(sumArray([4, 3, 2, 5,130]));
+console.log(sumArray([4, 3, 2, 5,45]));
 
 
 /**************************************************************
@@ -47,7 +47,6 @@ console.log(
   Create a function sortStudentsAlphabetically that receives an array of students name as a parameter 
   and uses the sort method to sort the strings in alphabetical order.
 **************************************************************/
-function sortStudentsAlphabetically(students) {
   //TODO: Add your code here
   function sortStudentsAlphabetically(students) {
     return students.sort();
@@ -66,8 +65,6 @@ function sortStudentsAlphabetically(students) {
       "Frank",
     ])
   );
-  }  
-
 
 /**************************************************************
   Task 5:
@@ -77,7 +74,6 @@ function sortStudentsAlphabetically(students) {
    - console.log(odds); // Output: [1, 3, 5, 7, 9]
    - console.log(evens); // Output: [2, 4, 6, 8, 10]
 **************************************************************/
-function separateOddEven(numbers) {
   //TODO: Add your code here
   function separateOddEven(numbers) {
     const odds = [];
@@ -87,8 +83,7 @@ function separateOddEven(numbers) {
     );
     return { odds, evens };
   }
-}
-// console.log(separateOddEven([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]));
+console.log(separateOddEven([1, 2, 3, 4, 5, 6, 7, 8, 9, 10])); 
 
 /**************************************************************
  Task 6:
