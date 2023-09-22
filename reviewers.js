@@ -6,7 +6,9 @@ console.log("🚀 ~ file: reviewers.js:2 ~ reviewers:", reviewers);
 ***********************************************************************/
 function getReviewerName(reviewer) {
   //TODO: ADD YOUR CODE HERE
+  return reviewer.reviewerName;
 }
+
 // console.log(getReviewerName(reviewers[0]));
 
 /*********************************************************************** 
@@ -14,6 +16,7 @@ function getReviewerName(reviewer) {
 ************************************************************************/
 function numberOfReviews(reviewer) {
   //TODO: ADD YOUR CODE HERE
+  return reviewer.books.length;
 }
 // console.log(numberOfReviews(reviewers[0]));
 
