@@ -1,4 +1,4 @@
-const reviewers = require("./reviewers.json");
+import reviewers from "./reviewers.json" assert {type: 'json'};
 console.log("🚀 ~ file: reviewers.js:2 ~ reviewers:", reviewers);
 
 /*********************************************************************** 
@@ -6,16 +6,18 @@ console.log("🚀 ~ file: reviewers.js:2 ~ reviewers:", reviewers);
 ***********************************************************************/
 function getReviewerName(reviewer) {
   //TODO: ADD YOUR CODE HERE
+  return reviewer.reviewerName;
 }
-// console.log(getReviewerName(reviewers[0]));
+console.log(getReviewerName(reviewers[0]));
 
 /*********************************************************************** 
 - Receives a reviewer object and returns the number of reviews that reviewer has done.
 ************************************************************************/
 function numberOfReviews(reviewer) {
   //TODO: ADD YOUR CODE HERE
+  return reviewer.books.length;
 }
-// console.log(numberOfReviews(reviewers[0]));
+console.log(numberOfReviews(reviewers[0]));
 
 /***********************************************************************
  - Receives a review title (string) and a reviewer object, 
@@ -25,8 +27,11 @@ function numberOfReviews(reviewer) {
  ***********************************************************************/
 function reviewerHasReview(reviewTitle, reviewer) {
   //TODO: ADD YOUR CODE HERE
+  return reviewer.books.some((book) => {
+    return book.title.toLowerCase() === reviewTitle.toLowerCase();
+  });
 }
-// console.log(reviewerHasReview("Becoming", reviewers[0]));
+console.log(reviewerHasReview("Becoming", reviewers[0]));
 
 /**************************************************************
  - Receives a reviewer name (string) and an array of reviewer objects,
@@ -35,8 +40,11 @@ function reviewerHasReview(reviewTitle, reviewer) {
  ****************************************************************/
 function getReviewerByName(reviewerName, reviewers) {
   //TODO: ADD YOUR CODE HERE
+  return reviewers.find(reviewer => {
+    return reviewer.reviewerName.toLowerCase() === reviewerName.toLowerCase();
+  });
 }
-// console.log(getReviewerByName("Michelle Obama", reviewers));
+console.log(getReviewerByName("Michelle Obama", reviewers));
 
 /**************************************************************
 - Receives a review title (string) and an array of reviewer objects, 
@@ -45,8 +53,11 @@ function getReviewerByName(reviewerName, reviewers) {
  ****************************************************************/
 function getReviewerByReviewTitle(reviewTitle, reviewers) {
   //TODO: ADD YOUR CODE HERE
+  return reviewers.find(reviewer => {
+    return reviewer.books.some(book => { return book.title.toLowerCase() == reviewTitle.toLowerCase() });
+  });
 }
-// console.log(getReviewerByReviewTitle("The Overstory", reviewers));
+console.log(getReviewerByReviewTitle("The Overstory", reviewers));
 
 /**************************************************************
 - Receives a query (string) and an array of reviewer objects,
@@ -55,5 +66,8 @@ function getReviewerByReviewTitle(reviewTitle, reviewers) {
  ****************************************************************/
 function searchReviewers(query, reviewers) {
   //TODO: ADD YOUR CODE HERE
+  return reviewers.filter(reviewer => {
+    return reviewer.reviewerName.includes(query) || reviewer.description.includes(query);
+  })
 }
-// console.log(searchReviewers("o", reviewers));
+console.log(searchReviewers("o", reviewers));

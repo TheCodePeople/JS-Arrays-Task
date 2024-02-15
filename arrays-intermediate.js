@@ -5,8 +5,11 @@
 **************************************************************/
 function sumArray(numbers) {
   //TODO: Add your code here
+
+  let sum = numbers.reduce((sum, number) => sum + number, 0);
+  return sum;
 }
-// console.log(sumArray([4, 3, 2, 5, -10]));
+console.log(sumArray([4, 3, 2, 5, -10]));
 
 /**************************************************************
  Task 2:
@@ -17,10 +20,13 @@ function sumArray(numbers) {
 **************************************************************/
 function findFirstStringStartingWithLetter(letter, strings) {
   //TODO: Add your code here
+  return strings.find((string) => {
+    return string.toLowerCase().startsWith(letter.toLowerCase())
+  });
 }
-// console.log(
-//   findFirstStringStartingWithLetter("h", ["Memory", "Hello", "Happy"])
-// );
+console.log(
+  findFirstStringStartingWithLetter("h", ["Memory", "Hello", "Happy"])
+);
 
 /**************************************************************
  Task 3:
@@ -31,16 +37,24 @@ function findFirstStringStartingWithLetter(letter, strings) {
 **************************************************************/
 function isPresentIncluded(presentName, presents) {
   //TODO: Add your code here
+  let presentIncluded = false
+  let arr = presents.map((present) => {
+    if (present.toLowerCase().includes(presentName)) {
+      presentIncluded = true;
+      return presentIncluded;
+    }
+  });
+  return presentIncluded;
 }
-// console.log(
-//   isPresentIncluded("puzzle", [
-//     "Sparkling Surprise",
-//     "Enchanted Elegance",
-//     "Whimsical Wonder",
-//     "Joyful Jingle",
-//     "Puzzle",
-//   ])
-// );
+console.log(
+  isPresentIncluded("puzzle", [
+    "Sparkling Surprise",
+    "Enchanted Elegance",
+    "Whimsical Wonder",
+    "Joyful Jingle",
+    "Puzzle",
+  ])
+);
 
 /**************************************************************
  Task 4:
@@ -51,21 +65,22 @@ function isPresentIncluded(presentName, presents) {
 **************************************************************/
 function sortStudentsAlphabetically(students) {
   //TODO: Add your code here
+  return students.sort();
 }
-// console.log(
-//   sortStudentsAlphabetically([
-//     "Eve",
-//     "Jasmia",
-//     "Husnia",
-//     "Grace",
-//     "Bob",
-//     "Charlie",
-//     "Alice",
-//     "Dave",
-//     "Um abbas",
-//     "Frank",
-//   ])
-// );
+console.log(
+  sortStudentsAlphabetically([
+    "Eve",
+    "Jasmia",
+    "Husnia",
+    "Grace",
+    "Bob",
+    "Charlie",
+    "Alice",
+    "Dave",
+    "Um abbas",
+    "Frank",
+  ])
+);
 
 /**************************************************************
   Task 5:
@@ -79,8 +94,18 @@ function sortStudentsAlphabetically(students) {
 **************************************************************/
 function separateOddEven(numbers) {
   //TODO: Add your code here
+  const evens = [];
+  const odds = [];
+  numbers.forEach((number) => {
+    if (number % 2 == 0) {
+      evens.push(number);
+    } else {
+      odds.push(number);
+    }
+  });
+  return evens + " and " + odds;
 }
-// console.log(separateOddEven([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]));
+console.log(separateOddEven([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]));
 
 /**************************************************************
  Task 6:
@@ -96,20 +121,23 @@ function separateOddEven(numbers) {
    
   const updatedItems = removeItem('#153', items);
   console.log(updatedItems); // Output: [{ code: "#147", name: "Scissors" }, { code: "#249", name: "Pillow" }, { code: "#149", name: "Tissue" },];
-
+ 
   Hint: Use the .filter and .startsWith method
 **************************************************************/
 function removeItem(code, items) {
   //TODO: Add your code here
+  return items.filter((item) => {
+    return !item.code.startsWith(code);
+  });
 }
-// console.log(
-//   removeItem("#153", [
-//     { code: "#153", name: "Ball" },
-//     { code: "#147", name: "Scissors" },
-//     { code: "#249", name: "Pillow" },
-//     { code: "#149", name: "Tissue" },
-//   ])
-// );
+console.log(
+  removeItem("#153", [
+    { code: "#153", name: "Ball" },
+    { code: "#147", name: "Scissors" },
+    { code: "#249", name: "Pillow" },
+    { code: "#149", name: "Tissue" },
+  ])
+);
 
 /**************************************************************
 Task 7:
@@ -128,7 +156,7 @@ Task 7:
     ];
   const updatedGrades = updateGrades(students, 10);
   console.log(updatedGrades);
-
+ 
   Output:
    [
      {
@@ -153,19 +181,29 @@ Task 7:
      { firstName: "Um Abbas", lastName: "Winston", grade: 10, type: "nerd" },
      { firstName: "Johny", lastName: "Micle", grade: 20, type: "regular" },
    ];
-
+ 
    Hint: Use the .map method and separator operator
 **************************************************************/
 function updateGrades(curve, students) {
   //TODO: Add your code here
+  let updatedStudents = [...students];
+  updatedStudents = updatedStudents.map((student) => {
+    if (student.type.toLowerCase() === "nerd") {
+      student.grade -= curve;
+    } else {
+      student.grade += curve;
+    }
+    return student;
+  });
+  return updatedStudents;
 }
-// console.log(
-//   updateGrades(10, [
-//     { firstName: "Jaber", lastName: "jabarbar", grade: 10, type: "regular" },
-//     { firstName: "Hamza", lastName: "Alhamazi", grade: 12, type: "regular" },
-//     { firstName: "Jasem", lastName: "Jamasmas", grade: 15, type: "nerd" },
-//     { firstName: "Kadhim", lastName: "Khadhmia", grade: 5, type: "regular" },
-//     { firstName: "Um Abbas", lastName: "IDK", grade: 20, type: "nerd" },
-//     { firstName: "Johny", lastName: "Micle", grade: 10, type: "regular" },
-//   ])
-// );
+console.log(
+  updateGrades(10, [
+    { firstName: "Jaber", lastName: "jabarbar", grade: 10, type: "regular" },
+    { firstName: "Hamza", lastName: "Alhamazi", grade: 12, type: "regular" },
+    { firstName: "Jasem", lastName: "Jamasmas", grade: 15, type: "nerd" },
+    { firstName: "Kadhim", lastName: "Khadhmia", grade: 5, type: "regular" },
+    { firstName: "Um Abbas", lastName: "IDK", grade: 20, type: "nerd" },
+    { firstName: "Johny", lastName: "Micle", grade: 10, type: "regular" },
+  ])
+);
