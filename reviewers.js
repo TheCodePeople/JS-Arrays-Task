@@ -6,6 +6,7 @@ console.log("🚀 ~ file: reviewers.js:2 ~ reviewers:", reviewers);
 ***********************************************************************/
 function getReviewerName(reviewer) {
   //TODO: ADD YOUR CODE HERE
+  return reviewer.reviewerName;
 }
 // console.log(getReviewerName(reviewers[0]));
 
@@ -14,6 +15,7 @@ function getReviewerName(reviewer) {
 ************************************************************************/
 function numberOfReviews(reviewer) {
   //TODO: ADD YOUR CODE HERE
+  return reviewer.books.length;
 }
 // console.log(numberOfReviews(reviewers[0]));
 
@@ -25,6 +27,7 @@ function numberOfReviews(reviewer) {
  ***********************************************************************/
 function reviewerHasReview(reviewTitle, reviewer) {
   //TODO: ADD YOUR CODE HERE
+  return reviewer.books.some((review) => review.title === reviewTitle);
 }
 // console.log(reviewerHasReview("Becoming", reviewers[0]));
 
@@ -35,8 +38,9 @@ function reviewerHasReview(reviewTitle, reviewer) {
  ****************************************************************/
 function getReviewerByName(reviewerName, reviewers) {
   //TODO: ADD YOUR CODE HERE
+  return reviewers.find((reviewer) => reviewer.reviewerName === reviewerName);
 }
-// console.log(getReviewerByName("Michelle Obama", reviewers));
+// console.log(getReviewerByName("Chimamanda Ngozi Adichie", reviewers));
 
 /**************************************************************
 - Receives a review title (string) and an array of reviewer objects, 
@@ -45,6 +49,10 @@ function getReviewerByName(reviewerName, reviewers) {
  ****************************************************************/
 function getReviewerByReviewTitle(reviewTitle, reviewers) {
   //TODO: ADD YOUR CODE HERE
+
+  return reviewers.find((reviewer) =>
+    reviewer.books.some((review) => review.title === reviewTitle)
+  );
 }
 // console.log(getReviewerByReviewTitle("The Overstory", reviewers));
 
@@ -55,5 +63,11 @@ function getReviewerByReviewTitle(reviewTitle, reviewers) {
  ****************************************************************/
 function searchReviewers(query, reviewers) {
   //TODO: ADD YOUR CODE HERE
+
+  return reviewers.filter(
+    (reviewer) =>
+      reviewer.reviewerName.includes(query) ||
+      reviewer.description.includes(query)
+  );
 }
-// console.log(searchReviewers("o", reviewers));
+console.log(searchReviewers("o", reviewers));

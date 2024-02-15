@@ -5,6 +5,9 @@
 **************************************************************/
 function sumArray(numbers) {
   //TODO: Add your code here
+  return numbers.reduce(
+    (accumulator, currentNumber) => accumulator + currentNumber
+  );
 }
 // console.log(sumArray([4, 3, 2, 5, -10]));
 
@@ -17,6 +20,7 @@ function sumArray(numbers) {
 **************************************************************/
 function findFirstStringStartingWithLetter(letter, strings) {
   //TODO: Add your code here
+  return strings.find((value, index) => value.toLowerCase().startsWith(letter));
 }
 // console.log(
 //   findFirstStringStartingWithLetter("h", ["Memory", "Hello", "Happy"])
@@ -31,6 +35,7 @@ function findFirstStringStartingWithLetter(letter, strings) {
 **************************************************************/
 function isPresentIncluded(presentName, presents) {
   //TODO: Add your code here
+  return presents.map((value) => value.toLowerCase()).includes(presentName);
 }
 // console.log(
 //   isPresentIncluded("puzzle", [
@@ -51,6 +56,7 @@ function isPresentIncluded(presentName, presents) {
 **************************************************************/
 function sortStudentsAlphabetically(students) {
   //TODO: Add your code here
+  return students.sort();
 }
 // console.log(
 //   sortStudentsAlphabetically([
@@ -79,6 +85,16 @@ function sortStudentsAlphabetically(students) {
 **************************************************************/
 function separateOddEven(numbers) {
   //TODO: Add your code here
+  let odds = [];
+  let evens = [];
+  numbers.forEach((value) => {
+    if (value % 2 === 0) {
+      evens.push(value);
+    } else {
+      odds.push(value);
+    }
+  });
+  return { odds, evens };
 }
 // console.log(separateOddEven([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]));
 
@@ -101,6 +117,9 @@ function separateOddEven(numbers) {
 **************************************************************/
 function removeItem(code, items) {
   //TODO: Add your code here
+  return items.filter((value) => {
+    value.code !== code;
+  });
 }
 // console.log(
 //   removeItem("#153", [
@@ -158,7 +177,15 @@ Task 7:
 **************************************************************/
 function updateGrades(curve, students) {
   //TODO: Add your code here
+  return students.map((value) => {
+    if (value.type === "nerd") {
+      return { ...value, grade: value.grade - curve };
+    } else {
+      return { ...value, grade: value.grade + curve };
+    }
+  });
 }
+
 // console.log(
 //   updateGrades(10, [
 //     { firstName: "Jaber", lastName: "jabarbar", grade: 10, type: "regular" },
