@@ -5,8 +5,9 @@
 **************************************************************/
 function sumArray(numbers) {
   //TODO: Add your code here
+  return numbers.reduce((items, value)=> items+value )
 }
-// console.log(sumArray([4, 3, 2, 5, -10]));
+console.log(sumArray([4, 3, 2, 5, -10]));
 
 /**************************************************************
  Task 2:
@@ -17,6 +18,7 @@ function sumArray(numbers) {
 **************************************************************/
 function findFirstStringStartingWithLetter(letter, strings) {
   //TODO: Add your code here
+  strings.find((str)=>  )
 }
 // console.log(
 //   findFirstStringStartingWithLetter("h", ["Memory", "Hello", "Happy"])
