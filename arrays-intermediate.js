@@ -3,9 +3,12 @@
    Create a function sumArray that receives an array of numbers as a parameter and returns the sum of all the numbers in the array.
    Hint: Use the .reduce() method
 **************************************************************/
-function sumArray(numbers) {
-  //TODO: Add your code here
-}
+// function sumArray(numbers) {
+// const sum= numbers.reduce((accumulator, currentValue)=>{
+//   return accumulator+currentValue;
+// })
+// return sum
+// }
 // console.log(sumArray([4, 3, 2, 5, -10]));
 
 /**************************************************************
@@ -15,11 +18,13 @@ function sumArray(numbers) {
   
   Hint: Use the .find() and .startsWith() methods
 **************************************************************/
-function findFirstStringStartingWithLetter(letter, strings) {
-  //TODO: Add your code here
-}
+// function findFirstStringStartingWithLetter(letter, strings) {
+//   var result = strings.find((value,index) => {
+//      return value.startsWith(letter);})
+//      return result
+// }
 // console.log(
-//   findFirstStringStartingWithLetter("h", ["Memory", "Hello", "Happy"])
+//   findFirstStringStartingWithLetter("H", ["Memory", "Hello", "Happy"])
 // );
 
 /**************************************************************
@@ -29,11 +34,11 @@ function findFirstStringStartingWithLetter(letter, strings) {
   
   Hint: Use the .map() and .includes() methods
 **************************************************************/
-function isPresentIncluded(presentName, presents) {
-  //TODO: Add your code here
-}
+// function isPresentIncluded(presentName, presents) {
+// return presents.includes(presentName)
+// }
 // console.log(
-//   isPresentIncluded("puzzle", [
+//   isPresentIncluded("blabla", [
 //     "Sparkling Surprise",
 //     "Enchanted Elegance",
 //     "Whimsical Wonder",
@@ -49,9 +54,10 @@ function isPresentIncluded(presentName, presents) {
 
   Hint: Use the .sort() method
 **************************************************************/
-function sortStudentsAlphabetically(students) {
-  //TODO: Add your code here
-}
+// function sortStudentsAlphabetically(students) {
+//   const sortedlist =students.sort()
+//   return sortedlist
+// }
 // console.log(
 //   sortStudentsAlphabetically([
 //     "Eve",
@@ -77,9 +83,20 @@ function sortStudentsAlphabetically(students) {
 
    Hint: Use the .forEach() and .push() methods
 **************************************************************/
-function separateOddEven(numbers) {
-  //TODO: Add your code here
-}
+// function separateOddEven(numbers) {
+//   let odds =[]
+//   let evens =[]
+//   numbers.forEach((value,index) => {
+//     if (value%2 ==0){
+//       evens.push(value)
+//     }else {
+//       odds.push(value)
+//     }
+
+//   });
+//   return {odds , evens} 
+  
+// }
 // console.log(separateOddEven([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]));
 
 /**************************************************************
@@ -99,9 +116,12 @@ function separateOddEven(numbers) {
 
   Hint: Use the .filter and .startsWith method
 **************************************************************/
-function removeItem(code, items) {
-  //TODO: Add your code here
-}
+// function removeItem(code, items) {
+//   const itemsAfterRemove = items.filter((value,index)=>{
+//     return value.code != code;
+//   })
+//   console.log(itemsAfterRemove)
+// }
 // console.log(
 //   removeItem("#153", [
 //     { code: "#153", name: "Ball" },
@@ -157,15 +177,23 @@ Task 7:
    Hint: Use the .map method and separator operator
 **************************************************************/
 function updateGrades(curve, students) {
-  //TODO: Add your code here
+
+  const updatedGrades = students.map((std)=>{
+    if (std.type !=="nerd"){
+    return { ...std, grade:std.grade+curve};
+    }
+    else{return std}
+  }
+  )
+  return updatedGrades
 }
-// console.log(
-//   updateGrades(10, [
-//     { firstName: "Jaber", lastName: "jabarbar", grade: 10, type: "regular" },
-//     { firstName: "Hamza", lastName: "Alhamazi", grade: 12, type: "regular" },
-//     { firstName: "Jasem", lastName: "Jamasmas", grade: 15, type: "nerd" },
-//     { firstName: "Kadhim", lastName: "Khadhmia", grade: 5, type: "regular" },
-//     { firstName: "Um Abbas", lastName: "IDK", grade: 20, type: "nerd" },
-//     { firstName: "Johny", lastName: "Micle", grade: 10, type: "regular" },
-//   ])
-// );
+console.log(
+  updateGrades(10, [
+    { firstName: "Jaber", lastName: "jabarbar", grade: 10, type: "regular" },
+    { firstName: "Hamza", lastName: "Alhamazi", grade: 12, type: "regular" },
+    { firstName: "Jasem", lastName: "Jamasmas", grade: 15, type: "nerd" },
+    { firstName: "Kadhim", lastName: "Khadhmia", grade: 5, type: "regular" },
+    { firstName: "Um Abbas", lastName: "IDK", grade: 20, type: "nerd" },
+    { firstName: "Johny", lastName: "Micle", grade: 10, type: "regular" },
+  ])
+);
