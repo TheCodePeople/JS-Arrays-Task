@@ -3,13 +3,13 @@
    Create a function sumArray that receives an array of numbers as a parameter and returns the sum of all the numbers in the array.
    Hint: Use the .reduce() method
 **************************************************************/
-function sumArray(numbers) {
-  return numbers.reduce(
-    (accumulator, currentValue) => accumulator + currentValue
-    
-  );
-}
-console.log(sumArray([4, 3, 2, 5, -10]));
+// function sumArray(numbers) {
+//   return numbers.reduce(
+//     (accumulator, currentValue) => accumulator + currentValue
+//     
+//   );
+// }
+// console.log(sumArray([4, 3, 2, 5, -10]));
 
 /**************************************************************
  Task 2:
@@ -34,21 +34,21 @@ console.log(sumArray([4, 3, 2, 5, -10]));
   
   Hint: Use the .map() and .includes() methods
 **************************************************************/
-function isPresentIncluded(presentName, presents) {
+// function isPresentIncluded(presentName, presents) {
 //   // TODO: Add your code here
-   return presents.map((value,index)=>
-    value.toLowerCase().includes(presentName)
-  )
-}
-console.log(
-  isPresentIncluded("puzzle", [
-    "Sparkling Surprise",
-    "Enchanted Elegance",
-    "Whimsical Wonder",
-    "Joyful Jingle",
-    "Puzzle",
-  ])
-);
+//    return presents.map((value,index)=>
+//     value.toLowerCase().includes(presentName)
+//   )
+// }
+// console.log(
+//   isPresentIncluded("puzzle", [
+//     "Sparkling Surprise",
+//     "Enchanted Elegance",
+//     "Whimsical Wonder",
+//     "Joyful Jingle",
+//     "Puzzle",
+//   ])
+// );
 
 /**************************************************************
  Task 4:
@@ -117,9 +117,8 @@ console.log(
   Hint: Use the .filter and .startsWith method
 **************************************************************/
 // function removeItem(code, items) {
-  //TODO: Add your code here
-
-// }
+// //   // TODO: Add your code here
+//  return items.filter((value,index)=>value.code !=code )}
 // console.log(
 //   removeItem("#153", [
 //     { code: "#153", name: "Ball" },
@@ -176,6 +175,13 @@ Task 7:
 **************************************************************/
 function updateGrades(curve, students) {
   //TODO: Add your code here
+  
+   students.map((value,index)=>{
+    if (value.type==="nerd"){
+      return value.grade-=curve
+    } else{return value.grade+=curve}
+  })
+  return students
 }
 console.log(
   updateGrades(10, [
