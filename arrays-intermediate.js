@@ -3,9 +3,9 @@
    Create a function sumArray that receives an array of numbers as a parameter and returns the sum of all the numbers in the array.
    Hint: Use the .reduce() method
 **************************************************************/
-function sumArray(numbers) {
-  //TODO: Add your code here
-}
+// function sumArray(numbers) {
+//   return numbers.reduce((acc ,curr)=> acc + curr )
+// };
 // console.log(sumArray([4, 3, 2, 5, -10]));
 
 /**************************************************************
@@ -15,9 +15,11 @@ function sumArray(numbers) {
   
   Hint: Use the .find() and .startsWith() methods
 **************************************************************/
-function findFirstStringStartingWithLetter(letter, strings) {
-  //TODO: Add your code here
-}
+
+// function findFirstStringStartingWithLetter(letter, strings) {
+//   //TODO: Add your code here
+//   return strings.find((value , index) => value.toLowerCase().startsWith(letter))
+// }
 // console.log(
 //   findFirstStringStartingWithLetter("h", ["Memory", "Hello", "Happy"])
 // );
@@ -29,9 +31,10 @@ function findFirstStringStartingWithLetter(letter, strings) {
   
   Hint: Use the .map() and .includes() methods
 **************************************************************/
-function isPresentIncluded(presentName, presents) {
-  //TODO: Add your code here
-}
+// function isPresentIncluded(presentName, presents) {
+//   //TODO: Add your code here
+//   return presents.map((value)=> value.toLowerCase().includes(presentName))
+// }
 // console.log(
 //   isPresentIncluded("puzzle", [
 //     "Sparkling Surprise",
@@ -49,9 +52,10 @@ function isPresentIncluded(presentName, presents) {
 
   Hint: Use the .sort() method
 **************************************************************/
-function sortStudentsAlphabetically(students) {
-  //TODO: Add your code here
-}
+// function sortStudentsAlphabetically(students) {
+//   //TODO: Add your code here
+//   return students.sort()
+// }
 // console.log(
 //   sortStudentsAlphabetically([
 //     "Eve",
@@ -77,9 +81,20 @@ function sortStudentsAlphabetically(students) {
 
    Hint: Use the .forEach() and .push() methods
 **************************************************************/
-function separateOddEven(numbers) {
-  //TODO: Add your code here
-}
+// function separateOddEven(numbers) {
+//   //TODO: Add your code here
+//   let even =[];
+//   let odd =[];
+//   numbers.forEach((value ,index) => {
+//     if (value % 2 === 0){
+//      even.push(value)
+//     }else{
+//       odd.push(value)
+//     }
+   
+//   });
+//    return {even,odd}
+// }
 // console.log(separateOddEven([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]));
 
 /**************************************************************
@@ -99,9 +114,10 @@ function separateOddEven(numbers) {
 
   Hint: Use the .filter and .startsWith method
 **************************************************************/
-function removeItem(code, items) {
-  //TODO: Add your code here
-}
+// function removeItem(code, items) {
+//   //TODO: Add your code here
+//  return items.filter((value)=> value.code != code );
+// }
 // console.log(
 //   removeItem("#153", [
 //     { code: "#153", name: "Ball" },
@@ -156,9 +172,18 @@ Task 7:
 
    Hint: Use the .map method and separator operator
 **************************************************************/
-function updateGrades(curve, students) {
-  //TODO: Add your code here
-}
+// function updateGrades(curve, students) {
+//   //TODO: Add your code here
+//    students.map((value,index)=>{
+//         if(value.type === "nerd"){
+//            value.grade -= curve
+//         }else{
+//            value.grade += curve
+//         }
+
+//   });
+//   return students
+// }
 // console.log(
 //   updateGrades(10, [
 //     { firstName: "Jaber", lastName: "jabarbar", grade: 10, type: "regular" },
