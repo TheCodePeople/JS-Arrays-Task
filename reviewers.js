@@ -1,12 +1,14 @@
 const reviewers = require("./reviewers.json");
+import reviewers from "./reviewers.json" assert { type: "json" };
 console.log("🚀 ~ file: reviewers.js:2 ~ reviewers:", reviewers);
 
 /*********************************************************************** 
 - This function receives a reviewer object and should return the name of the reviewer.
 ***********************************************************************/
-function getReviewerName(reviewer) {
-  //TODO: ADD YOUR CODE HERE
-}
+// function getReviewerName(reviewer) {
+//TODO: ADD YOUR CODE HERE
+//   console.log(reviewer.reviewerName);
+// }
 // console.log(getReviewerName(reviewers[0]));
 
 /*********************************************************************** 
@@ -14,6 +16,7 @@ function getReviewerName(reviewer) {
 ************************************************************************/
 function numberOfReviews(reviewer) {
   //TODO: ADD YOUR CODE HERE
+  return reviewer.books.length;
 }
 // console.log(numberOfReviews(reviewers[0]));
 
@@ -25,6 +28,9 @@ function numberOfReviews(reviewer) {
  ***********************************************************************/
 function reviewerHasReview(reviewTitle, reviewer) {
   //TODO: ADD YOUR CODE HERE
+  reviewer.books.some((items) => {
+    return items.title === reviewTitle;
+  });
 }
 // console.log(reviewerHasReview("Becoming", reviewers[0]));
 
@@ -35,6 +41,7 @@ function reviewerHasReview(reviewTitle, reviewer) {
  ****************************************************************/
 function getReviewerByName(reviewerName, reviewers) {
   //TODO: ADD YOUR CODE HERE
+  reviewers.find((items) => items.reviewerName === reviewerName);
 }
 // console.log(getReviewerByName("Michelle Obama", reviewers));
 
@@ -45,6 +52,11 @@ function getReviewerByName(reviewerName, reviewers) {
  ****************************************************************/
 function getReviewerByReviewTitle(reviewTitle, reviewers) {
   //TODO: ADD YOUR CODE HERE
+  return reviewers.find((items) => {
+    items.some((value) => {
+      return value.books === reviewTitle;
+    });
+  });
 }
 // console.log(getReviewerByReviewTitle("The Overstory", reviewers));
 
@@ -56,4 +68,15 @@ function getReviewerByReviewTitle(reviewTitle, reviewers) {
 function searchReviewers(query, reviewers) {
   //TODO: ADD YOUR CODE HERE
 }
+return reviewers.map((items) => {
+  items.reviewerName = items.reviewerName.toWloerCase();
+});
+return reviewers.map((items) => {
+  items.description = items.description.toWloerCase();
+});
+return reviewers.fiter((items) => {
+  if (items.reviewerName.includes(query) && items.description.includes(query)) {
+    return items;
+  }
+});
 // console.log(searchReviewers("o", reviewers));
