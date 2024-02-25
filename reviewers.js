@@ -1,21 +1,22 @@
-const reviewers = require("./reviewers.json");
-console.log("🚀 ~ file: reviewers.js:2 ~ reviewers:", reviewers);
-
+// const reviewers = require("./reviewers.json");
+// console.log("🚀 ~ file: reviewers.js:2 ~ reviewers:", reviewers);
+import reviewers from "./reviewers.json"assert {type:'json'}
 /*********************************************************************** 
 - This function receives a reviewer object and should return the name of the reviewer.
 ***********************************************************************/
 function getReviewerName(reviewer) {
-  //TODO: ADD YOUR CODE HERE
-}
-// console.log(getReviewerName(reviewers[0]));
+  return (reviewer.reviewerName);
+};
+
+console.log(getReviewerName(reviewers[0]));
 
 /*********************************************************************** 
 - Receives a reviewer object and returns the number of reviews that reviewer has done.
 ************************************************************************/
 function numberOfReviews(reviewer) {
-  //TODO: ADD YOUR CODE HERE
+  return reviewer.books.length;
 }
-// console.log(numberOfReviews(reviewers[0]));
+console.log(numberOfReviews(reviewers[0]));
 
 /***********************************************************************
  - Receives a review title (string) and a reviewer object, 
@@ -24,9 +25,9 @@ function numberOfReviews(reviewer) {
  - Bonus: uses iteration method .some()
  ***********************************************************************/
 function reviewerHasReview(reviewTitle, reviewer) {
-  //TODO: ADD YOUR CODE HERE
+  return reviewer.books.some((review) => review.title === reviewTitle);
 }
-// console.log(reviewerHasReview("Becoming", reviewers[0]));
+console.log(reviewerHasReview("Becoming", reviewers[0]));
 
 /**************************************************************
  - Receives a reviewer name (string) and an array of reviewer objects,
@@ -34,9 +35,9 @@ function reviewerHasReview(reviewTitle, reviewer) {
  - Bonus: uses iteration method .find()
  ****************************************************************/
 function getReviewerByName(reviewerName, reviewers) {
-  //TODO: ADD YOUR CODE HERE
+  return reviewers.find((reviewer) => reviewer.reviewerName === reviewerName);
 }
-// console.log(getReviewerByName("Michelle Obama", reviewers));
+console.log(getReviewerByName("Michelle Obama", reviewers));
 
 /**************************************************************
 - Receives a review title (string) and an array of reviewer objects, 
@@ -44,9 +45,9 @@ function getReviewerByName(reviewerName, reviewers) {
 - Bonus: uses iteration methods .find() and .some()
  ****************************************************************/
 function getReviewerByReviewTitle(reviewTitle, reviewers) {
-  //TODO: ADD YOUR CODE HERE
+  return reviewers.find((reviewer) => reviewerHasReview(reviewTitle, reviewer));
 }
-// console.log(getReviewerByReviewTitle("The Overstory", reviewers));
+console.log(getReviewerByReviewTitle("The Overstory", reviewers));
 
 /**************************************************************
 - Receives a query (string) and an array of reviewer objects,
@@ -54,6 +55,10 @@ function getReviewerByReviewTitle(reviewTitle, reviewers) {
 - Hint: uses string method .includes() and iteration method .filter()
  ****************************************************************/
 function searchReviewers(query, reviewers) {
-  //TODO: ADD YOUR CODE HERE
+  return reviewers.filter(
+    (reviewer) =>
+      reviewer.reviewerName.includes(query) ||
+      reviewer.description.includes(query)
+  );
 }
-// console.log(searchReviewers("o", reviewers));
+console.log(searchReviewers("o", reviewers));
