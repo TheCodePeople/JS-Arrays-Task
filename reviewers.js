@@ -6,8 +6,9 @@ console.log("🚀 ~ file: reviewers.js:2 ~ reviewers:", reviewers);
 ***********************************************************************/
 function getReviewerName(reviewer) {
   //TODO: ADD YOUR CODE HERE
+  return reviewer.reviewerName;
 }
-// console.log(getReviewerName(reviewers[0]));
+console.log(getReviewerName(reviewers[0]));
 
 /*********************************************************************** 
 - Receives a reviewer object and returns the number of reviews that reviewer has done.
